@@ -1,0 +1,9 @@
+<RCC>
+    <qresource prefix="/debugger">
+        <file>py_editor_tools/py_debugger/py_bdb.py</file>
+        <file>py_editor_tools/py_debugger/py_cmd.py</file>
+        <file>py_editor_tools/py_debugger/py_dbg.py</file>
+        <file>py_editor_tools/extract_structure.py</file>
+        <file>py_editor_tools/py_debugger/py_debugger_main.py</file>
+    </qresource>
+</RCC>

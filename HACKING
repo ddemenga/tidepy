@@ -1,0 +1,72 @@
+### File tree structure ###
+
+tidepy:
+
+    debugger_files.cpp : copy the python side debugger implementation files to user share location ( see ### Config files ### below )
+
+    editor:
+        actions :
+            objects that change the editor's text when specific key-sequence happened
+        filters:
+            objects that transform the selected editor's text.
+        lang_highlighters:
+            objects that highlight the python text
+
+    py_editor_tools:
+        files that implement the  python side debugger : py_debugger_main.py, py_bdb.py, py_cmd.py, py_dbg.py.
+        server side debugger: debugger_controller.cpp, debugger_json_reader.cpp, debugger_proxy.cpp
+
+    utils:
+        ansi_escape.cpp supports coloring the output from the python program being debugged.
+        pythoninfo.cpp help discovers version, path , and environment of a particular python interpreter.
+
+    widgets:
+        main window widgets
+
+
+
+### Config files  ###
+
+The program load and save the state from **QStandardPaths::AppConfigLocation** which is in ~/.config/tidepy
+
+### Python side Debugger implementation  ###
+
+At start up save the python side debugger implementation in the directory **QStandardPaths::AppLocalDataLocation** which is in ~./local/share/tidepy.
+The files are:
+
+1.    py_debugger_main.py
+2.    py_bdb.py ( modified version of python bdb.Bdb )
+3.    py_cmd.py ( modified version of python cmd.Cmd )
+4.    py_dbg.py ( modified version of python pdb.Pdb )
+
+
+### Python debugger cpp : ###
+
+
+debugger_json_reader.cpp :
+    Input and output of the program being debugged are wrapped into a json object.
+
+debugger_controller.cpp :
+    The QThread that start the debugging session through the use of debugger_proxy object.
+
+debugger_proxy.cpp :
+    Implement the handshack with the python process being debug.
+
+
+
+### Python Editor ###
+
+    The editor is implemented in editor/texteditbase.cpp and editor/editor.cpp.
+
+    The python syntax highlighter is implemented in editor/lang_highlighters/hightlighter_python.cpp which at the end call editor/syntaxhighlighter.cpp [ SyntaxHighlighter::setFormat ]
+    To change colors at the moment you have to change manually editor/syntaxhighlighter.cpp color values.
+
+    To add filters you must subclass text_editor::filters::Filter ( editor/filtres/filter.h ) . Than add a new instance to the list of editor snippet using editor->add_snippet
+    in wdigets/documentsviewer.cpp.
+
+
+
+
+
+
+

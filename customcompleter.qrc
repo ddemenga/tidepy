@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/">
+        <file>app_data/resources/wordlist.txt</file>
+        <file>app_data/resources/python_builtins.txt</file>
+    </qresource>
+</RCC>

@@ -1,0 +1,390 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>888</width>
+    <height>420</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Tiny Python IDE</string>
+  </property>
+  <property name="tabShape">
+   <enum>QTabWidget::Rounded</enum>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout" name="verticalLayout_2" stretch="10">
+    <property name="spacing">
+     <number>0</number>
+    </property>
+    <property name="leftMargin">
+     <number>0</number>
+    </property>
+    <property name="topMargin">
+     <number>0</number>
+    </property>
+    <property name="rightMargin">
+     <number>0</number>
+    </property>
+    <property name="bottomMargin">
+     <number>0</number>
+    </property>
+    <item>
+     <widget class="widgets::DocumentsViewer" name="documents" native="true"/>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>888</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menu_dockers">
+    <property name="title">
+     <string>Dockers</string>
+    </property>
+   </widget>
+   <widget class="QMenu" name="menuEditor">
+    <property name="title">
+     <string>Editor</string>
+    </property>
+    <widget class="QMenu" name="menutab_size">
+     <property name="title">
+      <string>tab size</string>
+     </property>
+     <addaction name="actionTabSize1"/>
+     <addaction name="actionTabSize2"/>
+     <addaction name="actionTabSize4"/>
+     <addaction name="actionTabSize8"/>
+     <addaction name="actionTabSize16"/>
+    </widget>
+    <addaction name="actionShow_whitespaces"/>
+    <addaction name="menutab_size"/>
+   </widget>
+   <widget class="QMenu" name="menuHelp">
+    <property name="title">
+     <string>Help</string>
+    </property>
+    <addaction name="separator"/>
+    <addaction name="actionAbout_Qt"/>
+   </widget>
+   <addaction name="menuEditor"/>
+   <addaction name="menu_dockers"/>
+   <addaction name="menuHelp"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar">
+   <property name="sizeGripEnabled">
+    <bool>false</bool>
+   </property>
+  </widget>
+  <widget class="QToolBar" name="toolBar">
+   <property name="windowTitle">
+    <string>toolBar</string>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="actionNewProject"/>
+   <addaction name="actionDelProject"/>
+   <addaction name="actionNewFile"/>
+   <addaction name="actionSave"/>
+   <addaction name="actionOpenFile"/>
+   <addaction name="actionNew_directory"/>
+   <addaction name="actionRun"/>
+   <addaction name="actionDebug"/>
+   <addaction name="separator"/>
+   <addaction name="actionSettings"/>
+  </widget>
+  <widget class="QToolBar" name="snippets_toolbar">
+   <property name="windowTitle">
+    <string>toolBar_2</string>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="actionClassSnippet"/>
+   <addaction name="actionClassFunctionSnippet"/>
+   <addaction name="actionPropertySnippet"/>
+   <addaction name="actionFunctionSnippet"/>
+   <addaction name="actionCaseSnippet"/>
+   <addaction name="actionLoopSequenceSnippet"/>
+   <addaction name="actionLoopMapSnippet"/>
+  </widget>
+  <action name="actionRun">
+   <property name="icon">
+    <iconset resource="icons.qrc">
+     <normaloff>:/app_data/icons/gtk-media-play-ltr.svg</normaloff>:/app_data/icons/gtk-media-play-ltr.svg</iconset>
+   </property>
+   <property name="text">
+    <string>Run</string>
+   </property>
+   <property name="toolTip">
+    <string>Run script</string>
+   </property>
+  </action>
+  <action name="actionDebug">
+   <property name="icon">
+    <iconset resource="icons.qrc">
+     <normaloff>:/app_data/icons/go-last.svg</normaloff>:/app_data/icons/go-last.svg</iconset>
+   </property>
+   <property name="text">
+    <string>Debug</string>
+   </property>
+   <property name="toolTip">
+    <string>Debug script</string>
+   </property>
+  </action>
+  <action name="actionShow_whitespaces">
+   <property name="icon">
+    <iconset resource="icons.qrc">
+     <normaloff>:/app_data/icons/edit-select-all.svg</normaloff>:/app_data/icons/edit-select-all.svg</iconset>
+   </property>
+   <property name="text">
+    <string>Show whitespaces</string>
+   </property>
+   <property name="toolTip">
+    <string>Show whitespaces</string>
+   </property>
+  </action>
+  <action name="actionAbout_Qt">
+   <property name="icon">
+    <iconset resource="icons.qrc">
+     <normaloff>:/app_data/icons/help-contents.svg</normaloff>:/app_data/icons/help-contents.svg</iconset>
+   </property>
+   <property name="text">
+    <string>About Qt ...</string>
+   </property>
+  </action>
+  <action name="actionSettings">
+   <property name="icon">
+    <iconset resource="icons.qrc">
+     <normaloff>:/app_data/icons/document-properties.svg</normaloff>:/app_data/icons/document-properties.svg</iconset>
+   </property>
+   <property name="text">
+    <string>Settings</string>
+   </property>
+   <property name="toolTip">
+    <string>Settings</string>
+   </property>
+  </action>
+  <action name="actionOpenFile">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="icons.qrc">
+     <normaloff>:/app_data/icons/document-open.svg</normaloff>:/app_data/icons/document-open.svg</iconset>
+   </property>
+   <property name="text">
+    <string>Open a file</string>
+   </property>
+   <property name="toolTip">
+    <string>Open a file</string>
+   </property>
+  </action>
+  <action name="actionClassSnippet">
+   <property name="icon">
+    <iconset resource="icons.qrc">
+     <normaloff>:/app_data/icons/extension.svg</normaloff>:/app_data/icons/extension.svg</iconset>
+   </property>
+   <property name="text">
+    <string>Class Snippet</string>
+   </property>
+   <property name="toolTip">
+    <string>Transform selected text in a class definition</string>
+   </property>
+  </action>
+  <action name="actionClassFunctionSnippet">
+   <property name="icon">
+    <iconset resource="icons.qrc">
+     <normaloff>:/app_data/icons/member_function.svg</normaloff>:/app_data/icons/member_function.svg</iconset>
+   </property>
+   <property name="text">
+    <string>Class Function Snippet</string>
+   </property>
+   <property name="toolTip">
+    <string>Transform selected text in a class member function definition </string>
+   </property>
+  </action>
+  <action name="actionPropertySnippet">
+   <property name="icon">
+    <iconset resource="icons.qrc">
+     <normaloff>:/app_data/icons/tag-new.svg</normaloff>:/app_data/icons/tag-new.svg</iconset>
+   </property>
+   <property name="text">
+    <string>Property Snippet</string>
+   </property>
+   <property name="toolTip">
+    <string>build  properties  from the selected text</string>
+   </property>
+  </action>
+  <action name="actionFunctionSnippet">
+   <property name="icon">
+    <iconset resource="icons.qrc">
+     <normaloff>:/app_data/icons/document-export.svg</normaloff>:/app_data/icons/document-export.svg</iconset>
+   </property>
+   <property name="text">
+    <string>Function snippet</string>
+   </property>
+   <property name="toolTip">
+    <string>build functions defs from selected text</string>
+   </property>
+  </action>
+  <action name="actionCaseSnippet">
+   <property name="icon">
+    <iconset resource="icons.qrc">
+     <normaloff>:/app_data/icons/editcopy.svg</normaloff>:/app_data/icons/editcopy.svg</iconset>
+   </property>
+   <property name="text">
+    <string>Case Snippet</string>
+   </property>
+   <property name="toolTip">
+    <string>build a case statement from the selected text</string>
+   </property>
+  </action>
+  <action name="actionLoopSequenceSnippet">
+   <property name="icon">
+    <iconset resource="icons.qrc">
+     <normaloff>:/app_data/icons/reload.svg</normaloff>:/app_data/icons/reload.svg</iconset>
+   </property>
+   <property name="text">
+    <string>Loop Sequence</string>
+   </property>
+   <property name="toolTip">
+    <string>build a 'for' statement on a sequence from the selected text</string>
+   </property>
+  </action>
+  <action name="actionLoopMapSnippet">
+   <property name="icon">
+    <iconset resource="icons.qrc">
+     <normaloff>:/app_data/icons/gtk-redo-ltr.svg</normaloff>:/app_data/icons/gtk-redo-ltr.svg</iconset>
+   </property>
+   <property name="text">
+    <string>Loop Map</string>
+   </property>
+   <property name="toolTip">
+    <string>build a 'for' statement on a map from the selected text</string>
+   </property>
+  </action>
+  <action name="actionNewProject">
+   <property name="icon">
+    <iconset resource="icons.qrc">
+     <normaloff>:/app_data/icons/address-book-new.svg</normaloff>:/app_data/icons/address-book-new.svg</iconset>
+   </property>
+   <property name="text">
+    <string>New Project</string>
+   </property>
+   <property name="toolTip">
+    <string>Load a project directory</string>
+   </property>
+  </action>
+  <action name="actionNewFile">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="icons.qrc">
+     <normaloff>:/app_data/icons/document-new.svg</normaloff>:/app_data/icons/document-new.svg</iconset>
+   </property>
+   <property name="text">
+    <string>New File</string>
+   </property>
+   <property name="toolTip">
+    <string>New File</string>
+   </property>
+  </action>
+  <action name="actionNew_directory">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="icons.qrc">
+     <normaloff>:/app_data/icons/add-folder-to-archive.svg</normaloff>:/app_data/icons/add-folder-to-archive.svg</iconset>
+   </property>
+   <property name="text">
+    <string>New directory</string>
+   </property>
+   <property name="toolTip">
+    <string>New directory</string>
+   </property>
+  </action>
+  <action name="actionDelProject">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="icons.qrc">
+     <normaloff>:/app_data/icons/address-book-remove.svg</normaloff>:/app_data/icons/address-book-remove.svg</iconset>
+   </property>
+   <property name="text">
+    <string>Remove Project</string>
+   </property>
+   <property name="toolTip">
+    <string>Unload Project</string>
+   </property>
+  </action>
+  <action name="actionSave">
+   <property name="icon">
+    <iconset resource="icons.qrc">
+     <normaloff>:/app_data/icons/document-save.svg</normaloff>:/app_data/icons/document-save.svg</iconset>
+   </property>
+   <property name="text">
+    <string>Save file</string>
+   </property>
+   <property name="toolTip">
+    <string>Save file</string>
+   </property>
+  </action>
+  <action name="actionTabSize1">
+   <property name="text">
+    <string>1</string>
+   </property>
+  </action>
+  <action name="actionTabSize2">
+   <property name="text">
+    <string>2</string>
+   </property>
+  </action>
+  <action name="actionTabSize4">
+   <property name="text">
+    <string>4</string>
+   </property>
+  </action>
+  <action name="actionTabSize8">
+   <property name="text">
+    <string>8</string>
+   </property>
+  </action>
+  <action name="actionTabSize16">
+   <property name="text">
+    <string>16</string>
+   </property>
+  </action>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>widgets::DocumentsViewer</class>
+   <extends>QWidget</extends>
+   <header>widgets/documentsviewer.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
+ <resources>
+  <include location="icons.qrc"/>
+ </resources>
+ <connections/>
+</ui>
