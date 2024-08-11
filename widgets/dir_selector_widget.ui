@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>DirSelector</class>
+ <widget class="QWidget" name="DirSelector">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>816</width>
+    <height>28</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <layout class="QHBoxLayout" name="horizontalLayout" stretch="1,10">
+   <property name="leftMargin">
+    <number>0</number>
+   </property>
+   <property name="topMargin">
+    <number>0</number>
+   </property>
+   <property name="rightMargin">
+    <number>0</number>
+   </property>
+   <property name="bottomMargin">
+    <number>0</number>
+   </property>
+   <item>
+    <widget class="QToolButton" name="btn">
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QLineEdit" name="text"/>
+   </item>
+  </layout>
+  <action name="actionChange_Dir">
+   <property name="icon">
+    <iconset resource="../icons.qrc">
+     <normaloff>:/app_data/icons/Humanity/actions/48/gtk-open.svg</normaloff>:/app_data/icons/Humanity/actions/48/gtk-open.svg</iconset>
+   </property>
+   <property name="text">
+    <string>Change Dir</string>
+   </property>
+   <property name="toolTip">
+    <string>Change Directory</string>
+   </property>
+  </action>
+ </widget>
+ <resources>
+  <include location="../icons.qrc"/>
+ </resources>
+ <connections/>
+</ui>
